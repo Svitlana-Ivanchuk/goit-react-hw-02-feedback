@@ -31,3 +31,14 @@ export const StatsCounter = styled.div`
   display: flex;
   gap: 20px;
 `;
+
+export const Notification = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.36;
+  padding: 24px;
+  color: #404bbf;
+`;

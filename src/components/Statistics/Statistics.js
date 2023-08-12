@@ -1,4 +1,5 @@
 import {
+  Notification,
   StatsBoard,
   StatsCounter,
   StatsElem,
@@ -15,7 +16,7 @@ export const Statistics = ({ feedbacks }) => {
     : Math.round((good / countTotalFeedback) * 100);
 
   return totalNoFeedback ? (
-    <span>'There is no feedback'</span>
+    <Notification>There is no feedback</Notification>
   ) : (
     <StatsBoard>
       <StatsFeedback>

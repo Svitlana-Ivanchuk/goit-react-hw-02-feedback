@@ -3,6 +3,7 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Section } from './Section/Section';
 import { Layout } from './Layout';
+import { GlobalStyle } from './GlobalStyle';
 
 export class App extends Component {
   state = {
@@ -30,6 +31,7 @@ export class App extends Component {
         <Section title="Statistics">
           <Statistics feedbacks={this.state}></Statistics>
         </Section>
+        <GlobalStyle />
       </Layout>
     );
   }
