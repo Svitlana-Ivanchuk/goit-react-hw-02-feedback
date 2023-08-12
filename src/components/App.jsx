@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Section } from './Section/Section';
+import { Layout } from './Layout';
 
 export class App extends Component {
   state = {
@@ -11,18 +12,14 @@ export class App extends Component {
   };
 
   handelClick = elem => {
-    //let status = evt.target.name;
-    const { good, neutral, bad } = this.state;
-    //console.log(this.state.key);
-
-    this.setState(prevState => ({ good: prevState.good + 1 }));
-    this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-    this.setState(prevState => ({ bad: prevState.bad + 1 }));
+    const status = elem.target.name;
+    //console.log([status]);
+    this.setState(prevState => ({ [status]: prevState[status] + 1 }));
   };
 
   render() {
     return (
-      <div>
+      <Layout>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
@@ -33,7 +30,7 @@ export class App extends Component {
         <Section title="Statistics">
           <Statistics feedbacks={this.state}></Statistics>
         </Section>
-      </div>
+      </Layout>
     );
   }
 }

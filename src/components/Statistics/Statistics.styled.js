@@ -4,6 +4,7 @@ export const StatsBoard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 20px;
 `;
 
@@ -16,4 +17,17 @@ export const StatsElem = styled.p`
   text-transform: capitalize;
   font-weight: 600;
   color: #4d5ae5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 8px 16px;
+`;
+
+export const StatsFeedback = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+export const StatsCounter = styled.div`
+  display: flex;
+  gap: 20px;
 `;

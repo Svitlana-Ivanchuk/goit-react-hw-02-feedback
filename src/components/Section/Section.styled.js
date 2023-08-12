@@ -7,6 +7,6 @@ export const Title = styled.h1`
   font-weight: 600;
   font-size: 28px;
   line-height: 1.36;
-  /*text-transform: uppercase;*/
   padding: 24px;
+  color: #404bbf;
 `;

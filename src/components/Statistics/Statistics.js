@@ -1,25 +1,36 @@
-import { StatsBoard, StatsElem } from './Statistics.styled';
+import {
+  StatsBoard,
+  StatsCounter,
+  StatsElem,
+  StatsFeedback,
+} from './Statistics.styled';
 
 export const Statistics = ({ feedbacks }) => {
   const keysFeedbacks = Object.keys(feedbacks);
   const { good, neutral, bad } = feedbacks;
-  console.log(keysFeedbacks);
-  console.log(feedbacks);
   const countTotalFeedback = good + neutral + bad;
+  const totalNoFeedback = countTotalFeedback === 0;
+  const countPositiveFeedbackPercentage = totalNoFeedback
+    ? 0
+    : Math.round((good / countTotalFeedback) * 100);
 
-  const countPositiveFeedbackPercentage =
-    countTotalFeedback === 0
-      ? 0
-      : Math.round((good / countTotalFeedback) * 100);
-  return (
+  return totalNoFeedback ? (
+    <span>'There is no feedback'</span>
+  ) : (
     <StatsBoard>
-      {keysFeedbacks.map(key => (
-        <StatsElem key={key}>
-          {key} : {feedbacks[key]}
+      <StatsFeedback>
+        {keysFeedbacks.map(key => (
+          <StatsElem key={key}>
+            {key} : {feedbacks[key]}
+          </StatsElem>
+        ))}
+      </StatsFeedback>
+      <StatsCounter>
+        <StatsElem>Total: {countTotalFeedback}</StatsElem>
+        <StatsElem>
+          PositiveFeedback: {countPositiveFeedbackPercentage}%
         </StatsElem>
-      ))}
-      <p>Total: {countTotalFeedback}</p>
-      <p>PositiveFeedback: {countPositiveFeedbackPercentage}%</p>
+      </StatsCounter>
     </StatsBoard>
   );
 };
