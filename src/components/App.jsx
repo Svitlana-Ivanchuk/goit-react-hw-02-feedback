@@ -12,9 +12,10 @@ export class App extends Component {
     bad: 0,
   };
 
-  handelClick = elem => {
-    const status = elem.target.name;
-    this.setState(prevState => ({ [status]: prevState[status] + 1 }));
+  handelClick = stateName => {
+    //console.log(stateName);
+
+    this.setState(prevState => ({ [stateName]: prevState[stateName] + 1 }));
   };
 
   render() {
