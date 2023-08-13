@@ -14,7 +14,6 @@ export class App extends Component {
 
   handelClick = elem => {
     const status = elem.target.name;
-    //console.log([status]);
     this.setState(prevState => ({ [status]: prevState[status] + 1 }));
   };
 
