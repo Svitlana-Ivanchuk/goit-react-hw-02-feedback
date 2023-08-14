@@ -13,6 +13,7 @@ export class App extends Component {
   };
 
   handelClick = stateName => {
+    console.log(stateName);
     this.setState(prevState => ({ [stateName]: prevState[stateName] + 1 }));
   };
 
